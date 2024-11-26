@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | ชมรมคนรักเฉาก๊วย</title>
+    <link rel="icon" href="/img/logo-bar.ico" type="image/ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="\img\logo.png" alt="Logo">
+            <h1>ชมรมคนรักเฉาก๊วย</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" style="color: #CF4F00;">Dashborad</a></li>
+                <li><a href="OurTeam.html">Our Team</a></li>
+            </ul> 
+        </nav>
+    </header>
+
+
+    <div class="menu">
+        <div>
+            <h1>Main Dashboard</h1>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div class="dashboard">
+        <div class="card">
+            <div class="left">
+                <img src="/img/weater.jpg" alt="Night">
+            </div>
+            <div class="right">
+                <div class="data">
+                    <div>
+                        <h3>Temp</h3>
+                        <h2 class="temperature"><span id="temperature">Loading...</span>°C</h2>
+                    </div>
+                    <div>
+                        <h3>Humidity</h3>
+                        <h2 class="temperature"><span id="humidity">Loading...</span>°C</h2>
+                    </div>
+                </div>
+                <br>
+                <div class="data">
+                    <div>
+                        <h3>Graph Display</h3>
+                        <img src="/img/Graph.png" alt="Graph Display">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Randoms Temp&Hum -->
+    <script>
+        <!-- const socket = new WebSocket('wss://iot406-acg8akfbafehd3b3.southeastasia-01.azurewebsites.net'); -->
+        const socket = new WebSocket('ws://localhost:8080');
+
+        socket.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            document.getElementById('temperature').textContent = data.temperature;
+            document.getElementById('humidity').textContent = data.humidity;
+        };
+
+        socket.onerror = (error) => {
+            console.error('WebSocket error:', error);
+        };
+    </script>
+
+
+    <!-- Footer Page -->
+    <footer>
+        <p>&copy; 2024 ชมรมคนรักเฉาก๊วย | All Rights Reserved By LAKE-VINCENT</p>
+    </footer>
+
+</body>
+</html>

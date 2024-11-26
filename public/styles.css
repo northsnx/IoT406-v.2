@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Noto Sans","Noto Sans Thai", Arial, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://building.spu.ac.th/uploads/Slidemain/20171130155703SE0I4zZ1.jpg'); 
+    background-size: cover;
+    color: white;
+}
+
+
+/* Header Bar */
+header {
+    /* background-color: #202020; */
+    color: #fff;
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 80px;
+    margin-right: 1em;
+    margin-left: 2em;
+}
+
+header h1 {
+    font-size: 2em;
+    
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    
+}
+
+header nav ul li {
+    margin: 0 10px;
+    
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin-right: 1.2em;
+    /* font-weight: bold; */
+}
+
+header nav ul li a:hover {
+    color: #aaa;
+    
+}
+
+
+/* MENU Bar */
+.menu {
+    padding-top: 2em;
+}
+
+.menu div h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+
+/* Dashboard Page */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.dashboard div h1 {
+    font-size: 50px;
+    
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 1000px;
+    margin-bottom: 20px;
+}
+
+.left {
+    text-align: center;
+}
+
+.left img {
+    width: 230px;
+    border-radius: 10px;
+}
+
+.right {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.data div {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    flex: 1;
+    margin: 0 5px;
+}
+
+.data div h2 {
+    margin: 10px 0;
+    font-size: 42px;
+}
+
+.data div h3 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.data div h4 {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.data img {
+    width: 80%;
+    border-radius: 10px;
+    background-color: #aaa;
+}
+
+
+
+/* footer */
+footer {
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    text-align: center;
+    padding: 10px 0;
+    /* margin-bottom: 2em; */
+    color: white;
+    font-size: 16px;
+}
+
+
+/* reposition phone */
+/* Media Query for small screens */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .logo {
+        margin: 0 auto;
+    }
+
+    header .logo img {
+        width: 60px;
+        margin: 0;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    header nav ul li a {
+        font-size: 1.2em;
+    }
+
+    .menu div h1 {
+        font-size: 36px;
+    }
+
+    .dashboard {
+        padding: 10px;
+    }
+
+    .dashboard div h1 {
+        font-size: 36px;
+    }
+
+    .card {
+        flex-direction: column;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .card .left img {
+        width: 180px;
+        margin-bottom: 10px;
+    }
+
+    .card .right {
+        margin-left: 0;
+    }
+
+    .data {
+        flex-direction: column;
+    }
+
+    .data div {
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 5px 0;
+    }
+}
